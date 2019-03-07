@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <meta name="author" content="Shahrukh Khan">
+    <meta name="description" content="Login System with Github using OAuth PHP and MySQL">
+    <meta name="keywords" content="php,mysql,Github,oauth,social logins,thesoftwareguy">
+    <meta name="title" content="Login System with Github using OAuth PHP and MySQL">
+
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">	<link href="https://fonts.googleapis.com/css?family=Charm|Niconne|Tangerine" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/html5shiv.js"></script>
+      <script src="bootstrap/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bootstrap/js/jquery-1.11.1.min.js"></script>
+	
+  </head>
+  <body>
+
+
+    <div class="container mainbody">
+      <div class="page-header">
+        <h1></h1>
+      </div>
+      <div class="clearfix"></div>
+<style>
+  ul#stepForm, ul#stepForm li {
+    margin: 0;
+    padding: 0;
+  }
+  ul#stepForm li {
+    list-style: none outside none;
+  } 
+  label{margin-top: 10px;}
+  .help-inline-error{color:red;}
+
+</style>
+
+<div class="container" style="padding-left: 0px; padding-right: 15px;">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"></h3>
+    </div>
+    <div class="panel-body">
+   <!--- <p style="font-family: 'Noto Serif SC', serif;font-size: 30px;
+    text-align: center;
+    margin-top: 76px;
+    margin-bottom: 84px;
+">THANK YOU FOR YOUR REGISTRATIONS!</p>-->
+	
+       <form name="basicform" id="basicform" method="post" action="index_form.php">          
+	   <div id="sf1" class="frm">        
+	   <fieldset>           		
+	   <div class="row">      
+	   <div class="form-group">             
+	   <div class="col-lg-12">		
+	   <h3 align="center"> 
+	   <img src="image/logo.png" style="margin-top: -24px;width: 230px; "/><br>		
+	   <label style="font-family: 'Open Sans', sans-serif;font-size:17px;">WELCOME TO THE REGISTRATION PROCESS</label>	
+	   <div class="col-sm-12" > <p style="font-size:18px"> SIGN IN WITH <br> <b>USER ID</b> </p>   
+	   <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter User ID" required></h3>  
+	   </div>         
+	   </div>        
+	   </div>        
+	   </div>        
+	   <div class="clearfix" style="height: 10px;clear: both;"></div>    
+	   <div class="form-group">		
+	   <h3 align="center">
+	   <label style="font-family: 'Open Sans', sans-serif;font-size:17px;">RI DISTRICT 3170 </label><h3>    
+	   <div class="col-lg-10 col-lg-offset-2">			    
+	   <button class="btn btn-primary open1 pull-right" type="submit" >Next <span class="fa fa-arrow-right"></span></button>             
+	          
+	   </div>          
+	   </div>         
+	   </fieldset>       
+	   </div>    	
+	   </form>
+    
+    </div>
+  </div>
+
+
+</div>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript">
+  
+  jQuery().ready(function() {
+
+    // validate form on keyup and submit
+    var v = jQuery("#basicform").validate({
+      rules: {
+        uname: {
+          required: true,
+          minlength: 2,
+          maxlength: 16
+        },
+        uemail: {
+          required: true,
+          minlength: 2,
+          email: true,
+          maxlength: 100,
+        },
+        upass1: {
+          required: true,
+          minlength: 6,
+          maxlength: 15,
+        },
+        upass2: {
+          required: true,
+          minlength: 6,
+          equalTo: "#upass1",
+        }
+
+      },
+      errorElement: "span",
+      errorClass: "help-inline-error",
+    });
+
+    $(".open1").click(function() {
+      if (v.form()) {
+        $(".frm").hide("fast");
+        $("#sf2").show("slow");
+      }
+    });
+
+    $(".open2").click(function() {
+      if (v.form()) {
+        $(".frm").hide("fast");
+        $("#sf3").show("slow");
+      }
+    });
+    
+    $(".open3").click(function() {
+      if (v.form()) {
+        $("#loader").show();
+         setTimeout(function(){
+           $("#basicform").html('<h2>Thanks for your time.</h2>');
+         }, 1000);
+        return false;
+      }
+    });
+    
+    $(".back2").click(function() {
+      $(".frm").hide("fast");
+      $("#sf1").show("slow");
+    });
+
+    $(".back3").click(function() {
+      $(".frm").hide("fast");
+      $("#sf2").show("slow");
+    });
+
+  });
+</script>
