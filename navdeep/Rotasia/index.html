@@ -165,21 +165,368 @@
     <!--HEADER END-->
 
 	
-	
+	<style type="text/css">
+
+
+  @-webkit-keyframes spincube {
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }
+
+  @keyframes spincube {
+    from,to {
+      -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      -moz-transform: rotateY(-90deg);
+      -ms-transform: rotateY(-90deg);
+      transform: rotateY(-90deg);
+    }
+    33% {
+      -moz-transform: rotateY(-90deg) rotateZ(90deg);
+      -ms-transform: rotateY(-90deg) rotateZ(90deg);
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      -moz-transform: rotateY(-180deg) rotateZ(90deg);
+      -ms-transform: rotateY(-180deg) rotateZ(90deg);
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      -moz-transform: rotateY(-270deg) rotateX(90deg);
+      -ms-transform: rotateY(-270deg) rotateX(90deg);
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+  }
+
+  .cubespinner {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 60px 60px 0;
+    -moz-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
+  }
+
+  .cubespinner div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 0px solid #ccc;
+    background: rgba(255,153,51,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 35px;  family:Oswald,sans-serif; color: white;
+	 
+  }
+
+  .cubespinner .face1 {
+  -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+  }
+  .cubespinner .face2 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);
+  }
+  .cubespinner .face3 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+  }
+  .cubespinner .face4 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner .face5 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+  }
+  
+  .cubespinner .face6 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(-90deg) translateZ(60px);
+    -moz-transform: rotateX(-90deg) translateZ(60px);
+    -ms-transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+
+  
+  
+  
+  .cubespinner1 {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 60px 60px 0;
+    -moz-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
+  }
+
+  
+  
+  
+  
+  
+  .cubespinner1 div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 0px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 35px; color: blue family:Oswald,sans-serif;
+	 
+  }
+  .cubespinner1 .face1 {
+  -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+  }
+  .cubespinner1 .face2 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);
+  }
+  .cubespinner1 .face3 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+  }
+  .cubespinner1 .face4 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner1 .face5 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+  }
+  
+  .cubespinner1 .face6 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(-90deg) translateZ(60px);
+    -moz-transform: rotateX(-90deg) translateZ(60px);
+    -ms-transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .cubespinner2 {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 60px 60px 0;
+    -moz-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
+  }
+
+  
+  
+  
+  .cubespinner2 div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 0px solid #ccc;
+    background: rgba(18,136,7,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 35px; color: white; family:Oswald,sans-serif;
+	 
+  }
+  .cubespinner2 .face1 {
+  -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+  }
+  .cubespinner2 .face2 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);
+  }
+  .cubespinner2 .face3 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+  }
+  .cubespinner2 .face4 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner2 .face5 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+  }
+  
+  .cubespinner2 .face6 {-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(-90deg) translateZ(60px);
+    -moz-transform: rotateX(-90deg) translateZ(60px);
+    -ms-transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+
+</style>
+
 	
 	
 
     <!--Banner-->
     <section>
+	
+	
+	
+	
         <div class="csi-banner csi-banner2">
             <div class="csi-banner-style">
                 <div class="csi-inner">
+				
+				
                     <div class="container">
-                        <div class="csi-banner-content">
-                            <h3 class="csi-subtitle" style="color: #fff">Welcome To</h3>
+<div class="stage" style="width: 120px; height: 120px;">
+
+<div class="cubespinner">
+<div class="face1">Rotasia</div>
+<div class="face2">20-23</div>
+<div class="face3">Rotasia</div>
+<div class="face4">20-23</div>
+<div class="face5">Rotasia</div>
+<div class="face6">20-23</div>
+</div>
+</div>
+<br><br><br><br>
+<div class="stage" style="width: 120px; height: 120px;">
+<div class="cubespinner1">
+<div class="face1">Delhi</div>
+<div class="face2">Feb</div>
+<div class="face3">Delhi</div>
+<div class="face4">Feb</div>
+<div class="face5">Delhi</div>
+<div class="face6">Feb</div>
+</div>
+</div>
+
+
+<br><br><br><br>
+
+<div class="stage" style="width: 120px; height: 120px;">
+<div class="cubespinner2">
+<div class="face1">3011</div>
+<div class="face2">2020</div>
+<div class="face3">3011</div>
+<div class="face4">2020</div>
+<div class="face5">3011</div>
+<div class="face6">2020</div>
+</div>
+</div>    
+
+
+	<div class="csi-banner-content">
+                           
+						   
+						   
+						   
+						   
+						   <!--
+						   <h3 class="csi-subtitle" style="color: #fff">Welcome To</h3>
                             <h2 class="csi-title"><span id="csi-typed-string">ROTASIA</span></h2>
                             <p class="date">20th - 23rd February 2020, <span>Delhi</span> </p>
-                        </div>
+                  -->      </div>
 
                         <div class="csi-countdown-area csi-countdown-area-center">
                             <div class="csi-countdown-area-inner">
@@ -258,7 +605,7 @@
 <a href="https://goo.gl/forms/W0LKVasyR84HX80f2" target="_blank">https://goo.gl/forms/W0LKVasyR84HX80f2</a><br/><br/>
 Please forward this mail to Rotaractors from your district who shall be attending Rotasia Delhi 2019.<br/><br/>
 If you have any queries, please reach out to:<br/><br/>
-<strong><span style="color: #b21e8e">Rtr. Dr. Sheetal khalap</span><br/>
+<strong><span style="color: #E82340">Rtr. Dr. Sheetal khalap</span><br/>
 Entertainment committee<br/>
 +91 7038511189 / sheetalkhalap14@gmail.com</strong><br/>
  
@@ -367,7 +714,7 @@ Entertainment committee<br/>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="csi-heading csi-heading-white">
-                                <h2 class="heading">Event Schedule*</h2>
+                                <h2 class="heading">Event Schedule *</h2>
                                 
                             </div>
                         </div>
@@ -398,7 +745,7 @@ Entertainment committee<br/>
                                                     <div class="panel-body">
                                                          <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title" STYLE="COLOR: #b21e8e">Day 1 Highlights</h3>
+                                                                    <h3 class="title" STYLE="COLOR: #E82340">Day 1 Highlights</h3>
                                                                    
                                                                 </div>
                                             <!--            <h4 class="location">Experience the most Vibrant Inaugural Ceremony at Rotasia Delhi, 2019. With delectable food, feet tapping performances and guests.</h4>
@@ -530,9 +877,9 @@ Entertainment committee<br/>
                                             </div>
 					    
 					    
+					    <br>
 					    
-					    
-			<p align="right">		*Schedule is Tentative. <br>	     
+			<p align="right">		* Schedule is Tentative. <br>	     
 				 </p>	    
 					    
 						    
@@ -560,7 +907,7 @@ Entertainment committee<br/>
                                                     <div class="panel-body">
                                                          <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title" STYLE="COLOR: #b21e8e">Day 2 Highlights</h3>
+                                                                    <h3 class="title" STYLE="COLOR: #E82340">Day 2 Highlights</h3>
                                                                    
                                                                 </div>
                                                         <h4 class="location"><!--Experience an array of knowledge during the Business sessions & indulge in a laughter riot during the Live Stand-Up Comedy Show while the Mr. & Ms. Rotasia
@@ -753,7 +1100,7 @@ Delhi, 2019 is in progress.</h4>-->
                                                                 </div>
                                                                 <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title">Ticketed Event**</h3>
+                                                                    <h3 class="title">Ticketed Event **</h3>
                                                                     
                                                                 </div>
                                                             </div>
@@ -763,8 +1110,8 @@ Delhi, 2019 is in progress.</h4>-->
                                                
                                             </div>
 											
-											
-					<p align="right">		*Schedule is Tentative. <br>	     
+											<br>
+					<p align="right">		* Schedule is Tentative. <br>	     
 				** Ticketed Event (E.g. Nightclub etc.) is optional & will be charged extra.<br> It will be post dinner and will be announced at a later date. </p>	    
 					    
 										
@@ -790,7 +1137,7 @@ Delhi, 2019 is in progress.</h4>-->
                                                     <div class="panel-body">
                                                          <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title" STYLE="COLOR: #b21e8e">Day 3 Highlights</h3>
+                                                                    <h3 class="title" STYLE="COLOR: #E82340">Day 3 Highlights</h3>
                                                                    
                                                                 </div>
                                                         <h4 class="location"><!--With a day packed with surprises and engaging activities, dance away to the
@@ -975,7 +1322,7 @@ most awaited EDM Concert with vitalized music.</h4>-->
                                                                 </div>
                                                                 <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title">Ticketed Event**</h3>
+                                                                    <h3 class="title">Ticketed Event **</h3>
                                                                    
                                                                 </div>
                                                             </div>
@@ -987,7 +1334,7 @@ most awaited EDM Concert with vitalized music.</h4>-->
 					    
 					    
 					    
-				<p align="right">		*Schedule is Tentative. <br>	     
+				<p align="right">		* Schedule is Tentative. <br>	     
 				** Ticketed Event (E.g. Nightclub etc.) is optional & will be charged extra.<br> It will be post dinner and will be announced at a later date. </p>	    
 					    
 					    
@@ -1010,7 +1357,7 @@ most awaited EDM Concert with vitalized music.</h4>-->
                                                     <div class="panel-body">
                                                          <div class="schedule-info">
                                                                     
-                                                                    <h3 class="title" STYLE="COLOR: #b21e8e">Day 4 Highlights</h3>
+                                                                    <h3 class="title" STYLE="COLOR: #E82340">Day 4 Highlights</h3>
                                                                    
                                                                 </div>
                                                         <h4 class="location"><!--Finally celebrate the diversified cultures and take away cherishable memories on the
@@ -1149,8 +1496,8 @@ announcements.</h4>-->
 					    
 			-->		    
 					    
-					    
-		<p align="right">		*Schedule is Tentative. 	     </p>
+					<br>    
+		<p align="right">		* Schedule is Tentative. 	     </p>
 					    
 					    
 					    
@@ -1204,7 +1551,7 @@ announcements.</h4>-->
                                              <a class="sp-tw" href="https://twitter.com/saidhekne" target="_blank"><i class="fa fa-twitter"></i></a>
                                         </div>
                                      -->   <div class="speaker-info">
-                                            <h3 class="title"><a href="#">Rtn. Suresh Bhasin</a></h3>
+                                            <h3 class="title"><a href="#">Rtn Suresh Bhasin</a></h3>
                                             <h4 class="subtitle">Host District Governor</h4>
                                         </div>
                                     </figcaption>
@@ -1223,8 +1570,8 @@ announcements.</h4>-->
                                            
                                         </div> -->
                                         <div class="speaker-info">
-                                            <h3 class="title"><a href="#">Rtn. Rtr. Manuj Mittal</a></h3>
-                                            <h4 class="subtitle">Rotasia Chair</h4>
+                                            <h3 class="title"><a href="#">Rtn | Rtr Manuj Mittal</a></h3>
+                                            <h4 class="subtitle">Rotasia Chairman</h4>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -1241,7 +1588,7 @@ announcements.</h4>-->
                                           
                                         </div> -->
                                         <div class="speaker-info">
-                                            <h3 class="title"><a href="#">Rtr. Ashima Agarwal</a></h3>
+                                            <h3 class="title"><a href="#">Rtr Ashima Agarwal</a></h3>
                                             <h4 class="subtitle">Bidding DRR</h4>
                                         </div>
                                     </figcaption>
@@ -1260,7 +1607,7 @@ announcements.</h4>-->
                                            
                                         </div>
                                       -->  <div class="speaker-info">
-                                            <h3 class="title"><a href="#">Rtr. Arpit Mehra</a></h3>
+                                            <h3 class="title"><a href="#">Rtr Arpit Mehra</a></h3>
                                             <h4 class="subtitle">Host DRR</h4>
                                         </div>
                                     </figcaption>
@@ -1336,7 +1683,7 @@ announcements.</h4>-->
                                    <img src="assets/img/reis-magos.jpg" alt="">
                                    
                                 </figure>
-                                 <h3 class="title" STYLE="COLOR: #b21e8e">Rotary Visits</h3>
+                                 <h3 class="title" STYLE="COLOR: #E82340">Rotary Visits</h3>
                             </div>
                         </div>
                        
@@ -1346,7 +1693,7 @@ announcements.</h4>-->
                                    <img src="assets/img/trekking.jpg" alt="">
                                    
                                 </figure>
-                                 <h3 class="title" STYLE="COLOR: #b21e8e">Delhi Darshan</h3>
+                                 <h3 class="title" STYLE="COLOR: #E82340">Delhi Darshan</h3>
                             </div>
                         </div>
                        
@@ -1356,7 +1703,7 @@ announcements.</h4>-->
                                  <img src="assets/img/industry.jpg" alt="">
                                    
                                 </figure>
-                                 <h3 class="title" STYLE="COLOR: #b21e8e">Street Shopping</h3>
+                                 <h3 class="title" STYLE="COLOR: #E82340">Street Shopping</h3>
                             </div>
                         </div>
 						
